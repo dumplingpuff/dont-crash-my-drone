@@ -7,7 +7,7 @@ const API_KEY = "885cfd6b7ff2244bb4608152e7e54064";
 const BOSTON_ID = 1;
 const TOKYO_ID = 2;
 
-//weather class 
+//weather class
 function Weather(latlng, state, wind, city){
 	this.latlng = latlng;
 	this.state = state;
@@ -20,14 +20,14 @@ function onLoad() {
 	// set the param
 	//showWeather();
 	var mapOptions = {
-		zoom: 12, 
-		center: new google.maps.LatLng(CENTER_LAT_BOSTON, CENTER_LNG_BOSTON), 
+		zoom: 12,
+		center: new google.maps.LatLng(CENTER_LAT_BOSTON, CENTER_LNG_BOSTON),
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 	// make a map instance
 	var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 	showInformation(false);
-}	
+}
 
 //check the place
 function showInformation(windy) {
@@ -97,12 +97,12 @@ function showWind(map, weathers){
 		if(speed < 3.3){
 			iconUrl = "https://cdn3.iconfinder.com/data/icons/badges-and-votes/60/Thumbs_up-01-32.png";
 			var circle = new google.maps.Circle({
-  				center: new google.maps.LatLng(weathers[i].latlng.lat, weathers[i].latlng.lon),  
+  				center: new google.maps.LatLng(weathers[i].latlng.lat, weathers[i].latlng.lon),
   				fillColor: '#00bfff',   // 塗りつぶし色
   				fillOpacity: 0.5,       // 塗りつぶし透過度（0: 透明 ⇔ 1:不透明）
   				map: map,             // 表示させる地図（google.maps.Map）
   				radius: 900,          // 半径（ｍ）
- 				strokeColor: '#00bfff', // 外周色 
+ 				strokeColor: '#00bfff', // 外周色
   				strokeOpacity: 1,       // 外周透過度（0: 透明 ⇔ 1:不透明）
   				strokeWeight: 1         // 外周太さ（ピクセル）
  				});
@@ -110,24 +110,24 @@ function showWind(map, weathers){
 		}else if (3.3< speed < 4 ){
 			iconUrl = "https://cdn2.iconfinder.com/data/icons/flat-style-svg-icons-part-1/512/warning_alert_attention_search-32.png";
 			var circle = new google.maps.Circle({
-  				center: new google.maps.LatLng(weathers[i].latlng.lat, weathers[i].latlng.lon),  
+  				center: new google.maps.LatLng(weathers[i].latlng.lat, weathers[i].latlng.lon),
   				fillColor: '#ffff00',   // 塗りつぶし色
   				fillOpacity: 0.5,       // 塗りつぶし透過度（0: 透明 ⇔ 1:不透明）
   				map: map,             // 表示させる地図（google.maps.Map）
   				radius: 900,          // 半径（ｍ）
- 				strokeColor: '#ffff00', // 外周色 
+ 				strokeColor: '#ffff00', // 外周色
   				strokeOpacity: 1,       // 外周透過度（0: 透明 ⇔ 1:不透明）
   				strokeWeight: 1         // 外周太さ（ピクセル）
  				});
 		}else{
 			iconUrl = "https://cdn1.iconfinder.com/data/icons/toolbar-signs/512/danger-32.png";
 			var circle = new google.maps.Circle({
-  				center: new google.maps.LatLng(weathers[i].latlng.lat, weathers[i].latlng.lon),  
+  				center: new google.maps.LatLng(weathers[i].latlng.lat, weathers[i].latlng.lon),
   				fillColor: '#ff0000',   // 塗りつぶし色
   				fillOpacity: 0.5,       // 塗りつぶし透過度（0: 透明 ⇔ 1:不透明）
   				map: map,             // 表示させる地図（google.maps.Map）
   				radius: 900,          // 半径（ｍ）
- 				strokeColor: '#ff0000', // 外周色 
+ 				strokeColor: '#ff0000', // 外周色
   				strokeOpacity: 1,       // 外周透過度（0: 透明 ⇔ 1:不透明）
   				strokeWeight: 1         // 外周太さ（ピクセル）
  				});
@@ -148,17 +148,17 @@ function showWind(map, weathers){
 			icon:"https://cdn1.iconfinder.com/data/icons/toolbar-signs/512/danger-32.png"
 		});
 	var circle = new google.maps.Circle({
-  				center: new google.maps.LatLng(weathers[weathers.length-1].latlng.lat, weathers[weathers.length-1].latlng.lon),  
+  				center: new google.maps.LatLng(weathers[weathers.length-1].latlng.lat, weathers[weathers.length-1].latlng.lon),
   				fillColor: '#ff0000',   // 塗りつぶし色
   				fillOpacity: 0.5,       // 塗りつぶし透過度（0: 透明 ⇔ 1:不透明）
   				map: map,             // 表示させる地図（google.maps.Map）
   				radius: 900,          // 半径（ｍ）
- 				strokeColor: '#ff0000', // 外周色 
+ 				strokeColor: '#ff0000', // 外周色
   				strokeOpacity: 1,       // 外周透過度（0: 透明 ⇔ 1:不透明）
   				strokeWeight: 1        // 外周太さ（ピクセル）
  				});
 
-	
+
 	var center = calcBalance(weathers);
 	var icon = new google.maps.Marker({
 			position: center,
@@ -167,12 +167,12 @@ function showWind(map, weathers){
 		});
 
 	var circle = new google.maps.Circle({
-  				center: center,  
+  				center: center,
   				fillColor: '#7fff00',   // 塗りつぶし色
   				fillOpacity: 0.3,       // 塗りつぶし透過度（0: 透明 ⇔ 1:不透明）
   				map: map,             // 表示させる地図（google.maps.Map）
   				radius: 2000,          // 半径（ｍ）
- 				strokeColor: '#7fff00', // 外周色 
+ 				strokeColor: '#7fff00', // 外周色
   				strokeOpacity: 1,       // 外周透過度（0: 透明 ⇔ 1:不透明）
   				strokeWeight: 1        // 外周太さ（ピクセル）
  				});
@@ -214,8 +214,8 @@ function setMap(map, city){
 	}
 
 	var mapOptions = {
-		zoom: 13, 
-		center: latlng, 
+		zoom: 13,
+		center: latlng,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
 	map.setOptions(mapOptions);
@@ -224,7 +224,7 @@ function setMap(map, city){
 function calcBalance(points) {
 	var latTotal = 0;
 	var lngTotal = 0;
-	
+
 	for (var i = 0; i < points.length; i++) {
 		latTotal += points[i].latlng.lat;
 		lngTotal += points[i].latlng.lon;
