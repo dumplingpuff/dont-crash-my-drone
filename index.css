@@ -1,12 +1,27 @@
+.navbar {
+  margin-bottom: 0;
+}
+.navbar-inverse {
+  margin-bottom: 0;
+}
+
 .intro-slide {
-  height: 100%;
+  background: #69D2E7;
+  height: 700px;
+  text-align: center;
   width: 100%;
 }
 
+.education-slide {
+  background-color: #A7DBD8;
+  height: 500px;
+  width: 100%;
+
+}
+
 .intro-slide-form {
-  /*background-image: url('drone-bg.jpg');*/
   margin: 0 auto;
-  margin-top: 200px;
+  margin-top: 100px;
   width: 400px;
 }
 
@@ -42,7 +57,74 @@
   text-align: center;
 }
 
+.welcome-screen {
+  background-color: #F38630;
+  width: 100%;
+  height: 610px;
+}
+
 .tutorials {
   text-align: center;
   margin: 0 auto;
+}
+
+
+
+.card-block {
+  border: 3px solid $soft-white;
+  border-radius: 2px;
+  margin: 30px;
+  padding: 0;
+  min-width: 274px;
+
+}
+
+.exercise-container {
+  background: rgb(42, 43, 40);
+  float: left;
+  margin: 10px;
+  width: 200px;
+  height: 300px;
+}
+
+.card-title {
+  font-weight: 600 !important;
+  text-align: center;
+  background-color: #E0E4CC;
+  color: black;
+/*//  background-color: rgba(0, 0, 0, 0.6);*/
+  margin: 0;
+  padding: 15px 0;
+}
+
+.card-text {
+  text-overflow: ellipsis;
+  color: white;
+  font-size: 18px;
+  /*background-color: rgba(0, 0, 0, 0.6);*/
+  padding: 0px;
+  margin: 0;
+}
+
+
+.card-bottom {
+  text-align: center;
+  color: white;
+/*//  background-color: rgba(0, 0, 0, 0.6);*/
+  margin: 0;
+  padding: 5px 0;
+}
+
+.exercise-snip-title{
+  height: 3em;
+}
+
+.exercise-snip {
+  height: 5em;
+  overflow: auto;
+}
+
+.exercise-container img {
+  border-radius: 40px;
+  margin: 10px;
 }

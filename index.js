@@ -244,6 +244,16 @@ function calcBalance(points) {
 // 	});
 // }
 
+
+// Directory
+// .intro-slide
+// .education-slide
+// .welcome-screen
+// .tutorials
+// .home-page
+
+
+
 $(document).ready(function() {
 
 	$('.tutorials').hide();
@@ -251,10 +261,20 @@ $(document).ready(function() {
 	$('.report-crash').hide();
 	$('.challenge1').hide();
 
+	$('.rotor').on('click', function() {
+		console.log('rotor');
+		$('.home-page').show();
+		$('.intro-slide').show();
+		$('.education-slide').show();
+		$('.welcome-screen').hide();
+		$('.tutorials').hide();
+	})
+
 	$('.sign-in').on('click', function() {
 		$('.intro-slide').hide();
-		$('#map').hide();
+		$('.education-slide').hide();
 		$('.welcome-screen').show();
+		$('tutorials').hide();
 	});
 
 	// $('ul li').on('click', function() {
@@ -262,11 +282,12 @@ $(document).ready(function() {
 	// });
 
 	$('.weather-map').on('click', function() {
+		$('.intro-slide').show();
+		$('.checklist').show();
 		$('#map').show();
-		$('.intro-slide').hide();
 		$('.report-crash').hide();
 		$('.tutorials').hide();
-		$('.checklist').hide();
+		$('education-slide').hide();
 	});
 
 	$('.video-tutorial').on('click', function() {
@@ -274,15 +295,8 @@ $(document).ready(function() {
 		$('#map').hide();
 		$('.report-crash').hide();
 		$('.checklist').hide();
+		$('.education-slide').hide();
 		$('.tutorials').show();
-	});
-
-	$('.logo').on('click', function() {
-		$('.intro-slide').hide();
-		$('#map').hide();
-		$('.checklist').show();
-		$('.tutorials').hide();
-		$('.report-crash').hide();
 	});
 
 });
