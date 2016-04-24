@@ -1,12 +1,24 @@
+nav .change {
+  margin-bottom: 0;
+}
+
 .intro-slide {
-  height: 100%;
+  background: #69D2E7;
+  height: 700px;
+  text-align: center;
   width: 100%;
 }
 
+.education-slide {
+  background-color: #A7DBD8;
+  height: 500px;
+  width: 100%;
+
+}
+
 .intro-slide-form {
-  /*background-image: url('drone-bg.jpg');*/
   margin: 0 auto;
-  margin-top: 200px;
+  margin-top: 100px;
   width: 400px;
 }
 
