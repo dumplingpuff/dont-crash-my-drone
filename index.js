@@ -286,7 +286,8 @@ $(document).ready(function() {
 		$('.welcome-screen').hide();
 	})
 
-	$('.sign-in').on('click', function() {
+	$('.sign-in').on('click', function(e) {
+		e.preventDefault();
 		$('.intro-slide').hide();
 		$('.education-slide').hide();
 		$('.welcome-screen').show();
