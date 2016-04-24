@@ -238,11 +238,15 @@ function calcBalance(points) {
 	return new google.maps.LatLng(glat, glng);
 }
 
-// function precheck () {
-// 	$('ul li').each(function(li) {
-// 		console.log(li);
-// 	});
-// }
+function precheck (e) {
+	console.log('precheck')
+	if($('#checkbox').prop('checked')) {
+		console.log('checked')
+	}
+	// $('ul li').each(function(li) {
+	// 	console.log(li);
+	// });
+}
 
 
 // Directory
@@ -277,9 +281,9 @@ $(document).ready(function() {
 		$('tutorials').hide();
 	});
 
-	// $('ul li').on('click', function() {
-	// 	precheck();
-	// });
+	$('ul li').on('click', function(e) {
+		precheck(e);
+	});
 
 	$('.weather-map').on('click', function() {
 		$('.intro-slide').show();
@@ -288,6 +292,7 @@ $(document).ready(function() {
 		$('.report-crash').hide();
 		$('.tutorials').hide();
 		$('education-slide').hide();
+		$('.welcome-screen').hide();
 	});
 
 	$('.video-tutorial').on('click', function() {
@@ -297,6 +302,7 @@ $(document).ready(function() {
 		$('.checklist').hide();
 		$('.education-slide').hide();
 		$('.tutorials').show();
+		$('.welcome-screen').hide();
 	});
 
 });
