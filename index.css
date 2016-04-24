@@ -18,7 +18,7 @@ a {
 
 .education-slide {
   background-color: #A7DBD8;
-  height: 500px;
+  height: auto;
   width: 100%;
 
 }
@@ -152,7 +152,7 @@ a {
 .survey {
   background: #A7DBD8;
   background-size: cover;
-  height: 568px;
+  height: auto;
   text-align: center;
   width: 100%;
 }

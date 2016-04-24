@@ -321,4 +321,11 @@ $(document).ready(function() {
 		$('.survey').hide();
 	});
 
+	$(function(){
+  $('.survey, .welcome-screen, .tutorials').css({ height: $(window).innerHeight() });
+  $(window).resize(function(){
+    $('.div1, .div2').css({ height: $(window).innerHeight() });
+  });
+});
+
 });
