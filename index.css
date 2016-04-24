@@ -1,5 +1,10 @@
-
 .intro-slide {
+  height: 100%;
+  width: 100%;
+}
+
+.intro-slide-form {
+  /*background-image: url('drone-bg.jpg');*/
   margin: 0 auto;
   margin-top: 200px;
   width: 400px;
@@ -28,6 +33,16 @@
   margin: auto;
 }
 
-.video-tutorial {
-  margin: auto;
+.status {
+  background: red;
+  border: 1px solid red;
+  border-radius: 40px;
+  color: white;
+  margin: 10px;
+  text-align: center;
+}
+
+.tutorials {
+  text-align: center;
+  margin: 0 auto;
 }

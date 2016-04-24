@@ -238,17 +238,18 @@ function calcBalance(points) {
 	return new google.maps.LatLng(glat, glng);
 }
 
-function precheck () {
-	$('ul li').each(function(li) {
-		console.log(li);
-	});
-}
+// function precheck () {
+// 	$('ul li').each(function(li) {
+// 		console.log(li);
+// 	});
+// }
 
 $(document).ready(function() {
 
 	$('.tutorials').hide();
 	$('.welcome-screen').hide();
 	$('.report-crash').hide();
+	$('.challenge1').hide();
 
 	$('.sign-in').on('click', function() {
 		$('.intro-slide').hide();
@@ -256,9 +257,9 @@ $(document).ready(function() {
 		$('.welcome-screen').show();
 	});
 
-	$('ul li').on('click', function() {
-		precheck();
-	});
+	// $('ul li').on('click', function() {
+	// 	precheck();
+	// });
 
 	$('.weather-map').on('click', function() {
 		$('#map').show();
@@ -277,9 +278,9 @@ $(document).ready(function() {
 	});
 
 	$('.logo').on('click', function() {
-		$('.intro-slide').show();
+		$('.intro-slide').hide();
 		$('#map').hide();
-		$('checklist').show();
+		$('.checklist').show();
 		$('.tutorials').hide();
 		$('.report-crash').hide();
 	});

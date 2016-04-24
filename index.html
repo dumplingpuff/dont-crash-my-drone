@@ -77,20 +77,23 @@
     </form>
     <div id="map" style="width: 400px; height: 300px;"></div>
 
-    <div>
-      <div class='intro-slide'>
-        <form>
-          <div class="form-group">
-            <label for="registration-number">Registration Number</label>
-            <input type="text" class="form-control" id="registration-number" placeholder="Registration #">
-          </div>
-          <div class="form-group">
-            <label for="email-form">Email</label>
-            <input type="email" class="form-control" id="email-form" placeholder="jane.doe@example.com">
-          </div>
-          <button type="submit" class="btn btn-default sign-in">Submit</button>
-        </form>
+    <div class='intro-slide'>
+      <div class='container'>
+        <div class='intro-slide-form'>
+          <form>
+            <div class="form-group">
+              <label for="registration-number">Registration Number</label>
+              <input type="text" class="form-control" id="registration-number" placeholder="Registration #">
+            </div>
+            <div class="form-group">
+              <label for="email-form">Email</label>
+              <input type="email" class="form-control" id="email-form" placeholder="jane.doe@example.com">
+            </div>
+            <button type="submit" class="btn btn-default sign-in">Submit</button>
+          </form>
+        </div>
       </div>
+    </div>
 
       <div class='welcome-screen'>
         <p>Thank you for signing in your drone, please see our mobile app for
@@ -105,12 +108,18 @@
             <li><input data-check= 4 type="checkbox">Is your aircraft registered?</input></li>
             <li><input data-check= 5 type="checkbox">How are you feeling today, ready to fly?</input></li>
             <li><input data-check= 6 type="checkbox">Are you clear of no Fly Zone?</input></li>
-          <div class='status'></div>
+          <div class='status'>
+            <h1>Not Ready</h1>
+          </div>
         </div>
       </div>
 
 
       <div id="map" style="width: 400px; height: 300px;"></div>
+      <div class='challenge1'>
+        <img src='drone-lift.jpg'>
+        <p>Lift the drone off the ground and hover.</p>
+      </div>
       <div class="report-crash">
         <form>
           <div class="form-group">
@@ -129,6 +138,9 @@
           src="https://www.youtube.com/embed/8_JarhVoq1A?autoplay=0">
         </iframe>
       </div>
+
+      <footer>
+      </footer>
 
     </body>
 </html>
