@@ -1,4 +1,7 @@
-nav > .navbar {
+.navbar {
+  margin-bottom: 0;
+}
+.navbar-inverse {
   margin-bottom: 0;
 }
 
