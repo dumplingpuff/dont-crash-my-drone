@@ -268,6 +268,7 @@ $(document).ready(function() {
 
 	$('.rotor').on('click', function() {
 		$('.home-page').show();
+		$('#map').show();
 		$('.intro-slide').show();
 		$('.education-slide').show();
 		$('.welcome-screen').hide();
@@ -289,7 +290,8 @@ $(document).ready(function() {
 		$('.intro-slide').hide();
 		$('.education-slide').hide();
 		$('.welcome-screen').show();
-		$('tutorials').hide();
+		$('.tutorials').hide();
+		$('.survey').hide();
 	});
 
 	$('ul li').on('click', function(e) {
@@ -304,6 +306,7 @@ $(document).ready(function() {
 		$('.tutorials').hide();
 		$('education-slide').hide();
 		$('.welcome-screen').hide();
+		$('.survey').hide();
 	});
 
 	$('.video-tutorial').on('click', function() {
@@ -314,6 +317,7 @@ $(document).ready(function() {
 		$('.education-slide').hide();
 		$('.tutorials').show();
 		$('.welcome-screen').hide();
+		$('.survey').hide();
 	});
 
 });

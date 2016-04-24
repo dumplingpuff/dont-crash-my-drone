@@ -130,6 +130,10 @@
   margin: 10px;
 }
 
+.rating-rating {
+  padding: 10px;
+}
+
 .survey {
   background: #A7DBD8;
   background-size: cover;

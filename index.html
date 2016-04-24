@@ -176,18 +176,20 @@
           <div class='container'>
             <h1>Did you accomplish the challenge?</h1>
             <form action="">
-              <a href="index.css" class="myButton">Yes</a>
-              <a href="index.css" class="myButton2">No</a><br>
-            </form>
+              <button class='btn btn-success'>Yes</button>
+              <button class='btn btn-danger'>No</button>
 
-            <h1>How hard was the challenge?</h1>
-            <form action="">
-                <input type="radio" name="Difficulty" value="5"> Very easy<br>
-                <input type="radio" name="Difficulty" value="4"> Easy<br>
-                <input type="radio" name="Difficulty" value="3"> Just Ok<br>
-                <input type="radio" name="Difficulty" value="2"> Hard<br>
-                <input type="radio" name="Difficulty" value="1"> Very Hard<br>
             </form>
+            <div class='rating-radio'>
+            <h1>How hard was the challenge?</h1>
+                <p><input type="radio" name="Difficulty" value="5"> Very easy</input></p>
+                <p><input type="radio" name="Difficulty" value="4"> Easy</input></p>
+                <p><input type="radio" name="Difficulty" value="3"> Just Ok</input></p>
+                <p><input type="radio" name="Difficulty" value="2"> Hard</input></p>
+                <p><input type="radio" name="Difficulty" value="1"> Very Hard</input></p>
+                <button type='submit' class='btn btn-primary'>Submit</button>
+          </div>
+
           </div>
         </div>
 
