@@ -158,7 +158,25 @@ function showWind(map, weathers){
   				strokeWeight: 1        // 外周太さ（ピクセル）
  				});
 
+	
 	var center = calcBalance(weathers);
+	var icon = new google.maps.Marker({
+			position: center,
+			map:map,
+			icon:"https://cdn3.iconfinder.com/data/icons/drone-business/512/quadcopter_screw_rotation-64.png"
+		});
+
+	var circle = new google.maps.Circle({
+  				center: center,  
+  				fillColor: '#7fff00',   // 塗りつぶし色
+  				fillOpacity: 0.3,       // 塗りつぶし透過度（0: 透明 ⇔ 1:不透明）
+  				map: map,             // 表示させる地図（google.maps.Map）
+  				radius: 2000,          // 半径（ｍ）
+ 				strokeColor: '#7fff00', // 外周色 
+  				strokeOpacity: 1,       // 外周透過度（0: 透明 ⇔ 1:不透明）
+  				strokeWeight: 1        // 外周太さ（ピクセル）
+ 				});
+
 	map.setCenter(center);
 }
 
