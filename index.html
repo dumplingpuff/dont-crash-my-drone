@@ -48,7 +48,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
                 <li class=""><a class='weather-map'>Weather Map</a></li>
-                <li><a class='weather-map'>Video Tutorials</a></li>
+                <li><a class='video-tutorial'>Video Tutorials</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
@@ -90,8 +90,37 @@
         </form>
       </div>
 
+      <div class='welcome-screen'>
+        <p>Thank you for signing in your drone, please see our mobile app for
+          training and simulation.
+        </p>
+          <p>Before you fly please do our pre-flight checklist.</p>
+        <div class='checklist'>
+          <ul>
+            <li><input data-check= 1 type="checkbox">Check the weather such as wind speed and incoming storms.</input></li>
+            <li><input data-check = 2 type="checkbox">Is your battery properly charged?</input></li>
+            <li><input data-check= 3 type="checkbox">Do you know your flight plan?</input></li>
+            <li><input type="checkbox">Is your aircraft registered?</input></li>
+            <li><input type="checkbox">How are you feeling today, ready to fly?</input></li>
+            <li><input type="checkbox">>Are you clear of no Fly Zone?</input></li>
+          <div class='status'></div>
+        </div>
+      </div>
 
 
+      <div id="map" style="width: 400px; height: 300px;"></div>
+      <div class="report-crash">
+        <form>
+          <div class="form-group">
+            <label for="registration-number">Registration Number</label>
+            <input type="text" class="form-control" id="registration-number" placeholder="Registration #">
+          </div>
+          <div class="form-group">
+            <label for="email-form">Email</label>
+            <input type="email" class="form-control" id="email-form" placeholder="jane.doe@example.com">
+          </div>
+          <button type="submit" class="btn btn-default sign-in">Submit</button>
+        </form>
       </div>
       <div class='tutorials'>
         <iframe width="420" height="345"

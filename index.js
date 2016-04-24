@@ -221,6 +221,7 @@ function setMap(map, city){
 	map.setOptions(mapOptions);
 }
 
+
 function calcBalance(points) {
 	var latTotal = 0;
 	var lngTotal = 0;
@@ -235,3 +236,28 @@ function calcBalance(points) {
 
 	return new google.maps.LatLng(glat, glng);
 }
+
+	$('.tutorials').hide();
+	$('.welcome-screen').hide();
+	$('.report-crash').hide();
+
+	$('.sign-in').on('click', function() {
+		$('.intro-slide').hide();
+		$('#map').hide();
+		$('.welcome-screen').show();
+	});
+
+	$('.weather-map').on('click', function() {
+		$('#map').show();
+		$('.intro-slide').hide();
+		$('.report-crash').hide();
+		$('.tutorials').hide();
+	});
+
+	$('.video-tutorial').on('click', function() {
+		$('.intro-slide').hide();
+		$('#map').hide();
+		$('.report-crash').hide();
+		$('.tutorials').show();
+	});
+});
