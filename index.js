@@ -264,14 +264,25 @@ $(document).ready(function() {
 	$('.welcome-screen').hide();
 	$('.report-crash').hide();
 	$('.challenge1').hide();
+	$('.survey').hide();
 
 	$('.rotor').on('click', function() {
-		console.log('rotor');
 		$('.home-page').show();
 		$('.intro-slide').show();
 		$('.education-slide').show();
 		$('.welcome-screen').hide();
 		$('.tutorials').hide();
+	});
+
+	$('.exercise-container').on('click', function() {
+		$('.survey').show();
+		$('.intro-slide').hide();
+		$('.checklist').hide();
+		$('#map').hide();
+		$('.report-crash').hide();
+		$('.tutorials').hide();
+		$('education-slide').hide();
+		$('.welcome-screen').hide();
 	})
 
 	$('.sign-in').on('click', function() {
