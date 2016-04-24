@@ -1,0 +1,48 @@
+.intro-slide {
+  height: 100%;
+  width: 100%;
+}
+
+.intro-slide-form {
+  /*background-image: url('drone-bg.jpg');*/
+  margin: 0 auto;
+  margin-top: 200px;
+  width: 400px;
+}
+
+.logo {
+  margin: 0;
+  padding: 0;
+}
+
+.welcome-screen {
+  text-align: center;
+}
+
+.checklist {
+  margin: auto;
+  width: 500px;
+  text-align: left;
+}
+
+.checklist li {
+  list-style-type: none;
+}
+
+#map {
+  margin: auto;
+}
+
+.status {
+  background: red;
+  border: 1px solid red;
+  border-radius: 40px;
+  color: white;
+  margin: 10px;
+  text-align: center;
+}
+
+.tutorials {
+  text-align: center;
+  margin: 0 auto;
+}
