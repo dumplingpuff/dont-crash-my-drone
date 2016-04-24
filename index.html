@@ -8,15 +8,34 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="index.css">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=ja"></script>
-      <script src="index.js" type="text/javascript"></script>
+    <script src="index.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.7.min.js" ></script>
+    <script src="http://code.jquery.com/ui/1.7.0/jquery-ui.js" ></script>
 
     </head>
     <body onload="onLoad()" style="margin: 0px; padding: 0px;">
       <header>
       </header>
       
+      <form action="" method="get" name = "form1">
+  <table border="0">
+  <tr>
+    <td align="right"><b>Place：</b></td>
+    <td>
+      <input type="radio" name="place" value="boston" id="boston" onchange="showInformation()">Boston
+      <input type="radio" name="place" value="tokyo" id="tokyo" onchange="showInformation()">Tokyo
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+      <input type="submit" value="SHOW THE WEATHER">
+      <input type="reset" value="SHOW THE WIND">
+    </td>
+  </tr>
+</table>
+</form>
+
       <div id="map" style="width: 1400px; height: 1000px;"></div>
-
-
     </body>
 </html>
