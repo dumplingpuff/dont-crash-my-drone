@@ -81,6 +81,7 @@
 
 .exercise-container {
   background: rgb(42, 43, 40);
+  cursor: pointer;
   float: left;
   margin: 10px;
   width: 200px;
@@ -127,4 +128,12 @@
 .exercise-container img {
   border-radius: 40px;
   margin: 10px;
+}
+
+.survey {
+  background: #A7DBD8;
+  background-size: cover;
+  height: 568px;
+  text-align: center;
+  width: 100%;
 }
