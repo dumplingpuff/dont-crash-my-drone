@@ -16,26 +16,26 @@
     <body onload="onLoad()" style="margin: 0px; padding: 0px;">
       <header>
       </header>
-      
-      <form action="" method="get" name = "form1">
-  <table border="0">
-  <tr>
-    <td align="right"><b>Place：</b></td>
-    <td>
-      <input type="radio" checked="checked" name="place" value="boston" id="boston" onchange="showInformation()">Boston
-      <input type="radio" name="place" value="tokyo" id="tokyo" onchange="showInformation()">Tokyo
-    </td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>
-      <input type="submit" value="SHOW THE WEATHER" onclick="showInformation()">
-      <input type="reset" value="SHOW THE WIND" onclick="onWind()">
-    </td>
-  </tr>
-</table>
-</form>
+    
+    <form action="" method="get" name = "form1">
+    <table border="0">
+      <tr>
+        <td align="right"><b>Place：</b></td>
+        <td>
+          <input type="radio" checked="checked" name="place" value="boston" id="boston" onchange="showInformation()">Boston
+          <input type="radio" name="place" value="tokyo" id="tokyo" onchange="showInformation()">Tokyo
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input type="submit" value="SHOW THE WEATHER" onclick="showInformation()">
+          <input type="reset" value="SHOW THE WIND" onclick="onWind()">
+        </td>
+      </tr>
+    </table>
+    </form>
 
-      <div id="map" style="width: 1000px; height: 700px;"></div>
+      <div id="map" style="width: 900px; height: 800px;"></div>
     </body>
 </html>

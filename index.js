@@ -94,13 +94,43 @@ function showWind(map, weathers){
 	for (var i = 0;i<weathers.length-1;i++) {
 		var speed = weathers[i].wind.speed;
 		var iconUrl;
-		if(speed < 3){
-			iconUrl = "https://cdn4.iconfinder.com/data/icons/medical-red-2/512/positive-32.png";
-		}else if (3< speed < 5 ){
+		if(speed < 3.3){
+			iconUrl = "https://cdn3.iconfinder.com/data/icons/badges-and-votes/60/Thumbs_up-01-32.png";
+			var circle = new google.maps.Circle({
+  				center: new google.maps.LatLng(weathers[i].latlng.lat, weathers[i].latlng.lon),  
+  				fillColor: '#00bfff',   // 塗りつぶし色
+  				fillOpacity: 0.5,       // 塗りつぶし透過度（0: 透明 ⇔ 1:不透明）
+  				map: map,             // 表示させる地図（google.maps.Map）
+  				radius: 900,          // 半径（ｍ）
+ 				strokeColor: '#00bfff', // 外周色 
+  				strokeOpacity: 1,       // 外周透過度（0: 透明 ⇔ 1:不透明）
+  				strokeWeight: 1         // 外周太さ（ピクセル）
+ 				});
+
+		}else if (3.3< speed < 4 ){
 			iconUrl = "https://cdn2.iconfinder.com/data/icons/flat-style-svg-icons-part-1/512/warning_alert_attention_search-32.png";
-		
+			var circle = new google.maps.Circle({
+  				center: new google.maps.LatLng(weathers[i].latlng.lat, weathers[i].latlng.lon),  
+  				fillColor: '#ffff00',   // 塗りつぶし色
+  				fillOpacity: 0.5,       // 塗りつぶし透過度（0: 透明 ⇔ 1:不透明）
+  				map: map,             // 表示させる地図（google.maps.Map）
+  				radius: 900,          // 半径（ｍ）
+ 				strokeColor: '#ffff00', // 外周色 
+  				strokeOpacity: 1,       // 外周透過度（0: 透明 ⇔ 1:不透明）
+  				strokeWeight: 1         // 外周太さ（ピクセル）
+ 				});
 		}else{
 			iconUrl = "https://cdn1.iconfinder.com/data/icons/toolbar-signs/512/danger-32.png";
+			var circle = new google.maps.Circle({
+  				center: new google.maps.LatLng(weathers[i].latlng.lat, weathers[i].latlng.lon),  
+  				fillColor: '#ff0000',   // 塗りつぶし色
+  				fillOpacity: 0.5,       // 塗りつぶし透過度（0: 透明 ⇔ 1:不透明）
+  				map: map,             // 表示させる地図（google.maps.Map）
+  				radius: 900,          // 半径（ｍ）
+ 				strokeColor: '#ff0000', // 外周色 
+  				strokeOpacity: 1,       // 外周透過度（0: 透明 ⇔ 1:不透明）
+  				strokeWeight: 1         // 外周太さ（ピクセル）
+ 				});
 		}
 		var icon = new google.maps.Marker({
 			position: new google.maps.LatLng(weathers[i].latlng.lat, weathers[i].latlng.lon),
@@ -108,6 +138,7 @@ function showWind(map, weathers){
 			animation: google.maps.Animation.DROP,
 			icon:iconUrl
 		});
+
 	}
 
 	var icon = new google.maps.Marker({
@@ -116,6 +147,16 @@ function showWind(map, weathers){
 			animation: google.maps.Animation.DROP,
 			icon:"https://cdn1.iconfinder.com/data/icons/toolbar-signs/512/danger-32.png"
 		});
+	var circle = new google.maps.Circle({
+  				center: new google.maps.LatLng(weathers[weathers.length-1].latlng.lat, weathers[weathers.length-1].latlng.lon),  
+  				fillColor: '#ff0000',   // 塗りつぶし色
+  				fillOpacity: 0.5,       // 塗りつぶし透過度（0: 透明 ⇔ 1:不透明）
+  				map: map,             // 表示させる地図（google.maps.Map）
+  				radius: 900,          // 半径（ｍ）
+ 				strokeColor: '#ff0000', // 外周色 
+  				strokeOpacity: 1,       // 外周透過度（0: 透明 ⇔ 1:不透明）
+  				strokeWeight: 1        // 外周太さ（ピクセル）
+ 				});
 
 	var center = calcBalance(weathers);
 	map.setCenter(center);
