@@ -180,6 +180,7 @@ function showWind(map, weathers){
 	map.setCenter(center);
 }
 
+
 //show the weather and return response in JSON
 function getWeather(map, latlng, windy) {
 	var xmlHttpRequest = new XMLHttpRequest();
@@ -237,6 +238,14 @@ function calcBalance(points) {
 	return new google.maps.LatLng(glat, glng);
 }
 
+function precheck () {
+	$('ul li').each(function(li) {
+		console.log(li);
+	});
+}
+
+$(document).ready(function() {
+
 	$('.tutorials').hide();
 	$('.welcome-screen').hide();
 	$('.report-crash').hide();
@@ -247,17 +256,32 @@ function calcBalance(points) {
 		$('.welcome-screen').show();
 	});
 
+	$('ul li').on('click', function() {
+		precheck();
+	});
+
 	$('.weather-map').on('click', function() {
 		$('#map').show();
 		$('.intro-slide').hide();
 		$('.report-crash').hide();
 		$('.tutorials').hide();
+		$('.checklist').hide();
 	});
 
 	$('.video-tutorial').on('click', function() {
 		$('.intro-slide').hide();
 		$('#map').hide();
 		$('.report-crash').hide();
+		$('.checklist').hide();
 		$('.tutorials').show();
 	});
+
+	$('.logo').on('click', function() {
+		$('.intro-slide').show();
+		$('#map').hide();
+		$('checklist').show();
+		$('.tutorials').hide();
+		$('.report-crash').hide();
+	});
+
 });

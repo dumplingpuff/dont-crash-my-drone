@@ -5,7 +5,10 @@
   width: 400px;
 }
 
-
+.logo {
+  margin: 0;
+  padding: 0;
+}
 
 .welcome-screen {
   text-align: center;
@@ -19,4 +22,12 @@
 
 .checklist li {
   list-style-type: none;
+}
+
+#map {
+  margin: auto;
+}
+
+.video-tutorial {
+  margin: auto;
 }
