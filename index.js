@@ -20,34 +20,39 @@ function onLoad() {
 	// set the param
 	//showWeather();
 	var mapOptions = {
-		zoom: 14, 
+		zoom: 12, 
 		center: new google.maps.LatLng(CENTER_LAT_BOSTON, CENTER_LNG_BOSTON), 
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 	// make a map instance
 	var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-	showInformation();
+	showInformation(false);
 }	
 
 //check the place
-function showInformation() {
+function showInformation(windy) {
 	var place = document.getElementById("boston").checked;
 	var map = new google.maps.Map(document.getElementById("map"), null);
 
 	if(place){
 		setMap(map, BOSTON_ID);
 		var latlng_info = new google.maps.LatLng(CENTER_LAT_BOSTON, CENTER_LNG_BOSTON);
-		getWeather(map, latlng_info);
+		getWeather(map, latlng_info, windy);
 	}else{
 		//focus on Tokyo
 		setMap(map, TOKYO_ID);
 		var latlng_info = new google.maps.LatLng(CENTER_LAT_TOKYO, CENTER_LNG_TOKYO);
-		getWeather(map, latlng_info);
+		getWeather(map, latlng_info, windy);
 	}
 }
 
+function onWind(){
+	showInformation(true);
+}
+
+
 // add marker using the response
-function showWeather(map, list){
+function showWeather(map, list, windy){
 	var weathers = new Array();
 
 	//console.log(list[0].coord);
@@ -55,8 +60,12 @@ function showWeather(map, list){
 		weathers[i] = new Weather(list[i].coord, list[i].weather, list[i].wind, list[i].name);
 		//console.log(weathers[i]);
 	}
-	showState(map,weathers);
-	//showWind();
+	if(windy){
+		showWind(map,weathers);
+	}else{
+		showState(map,weathers);
+		//showWind();
+	}
 }
 
 function showState(map, weathers){
@@ -82,11 +91,38 @@ function showState(map, weathers){
 }
 
 function showWind(map, weathers){
+	for (var i = 0;i<weathers.length-1;i++) {
+		var speed = weathers[i].wind.speed;
+		var iconUrl;
+		if(speed < 3){
+			iconUrl = "https://cdn4.iconfinder.com/data/icons/medical-red-2/512/positive-32.png";
+		}else if (3< speed < 5 ){
+			iconUrl = "https://cdn2.iconfinder.com/data/icons/flat-style-svg-icons-part-1/512/warning_alert_attention_search-32.png";
+		
+		}else{
+			iconUrl = "https://cdn1.iconfinder.com/data/icons/toolbar-signs/512/danger-32.png";
+		}
+		var icon = new google.maps.Marker({
+			position: new google.maps.LatLng(weathers[i].latlng.lat, weathers[i].latlng.lon),
+			map:map,
+			animation: google.maps.Animation.DROP,
+			icon:iconUrl
+		});
+	}
 
+	var icon = new google.maps.Marker({
+			position: new google.maps.LatLng(weathers[weathers.length-1].latlng.lat, weathers[weathers.length-1].latlng.lon),
+			map:map,
+			animation: google.maps.Animation.DROP,
+			icon:"https://cdn1.iconfinder.com/data/icons/toolbar-signs/512/danger-32.png"
+		});
+
+	var center = calcBalance(weathers);
+	map.setCenter(center);
 }
 
 //show the weather and return response in JSON
-function getWeather(map, latlng) {
+function getWeather(map, latlng, windy) {
 	var xmlHttpRequest = new XMLHttpRequest();
 	xmlHttpRequest.onreadystatechange = function()
 	{
@@ -95,11 +131,11 @@ function getWeather(map, latlng) {
 	        if( this.response )
 	        {
 	        	//console.log(this.response.list);
-	            showWeather(map, this.response.list);
+	            showWeather(map, this.response.list, windy);
 	        }
 	    }
 	}
-	xmlHttpRequest.open( 'GET',"http://api.openweathermap.org/data/2.5/find?lat="+ latlng.lat() + "&lon="+latlng.lng()+"&cnt=4&appid="+ API_KEY , true );
+	xmlHttpRequest.open( 'GET',"http://api.openweathermap.org/data/2.5/find?lat="+ latlng.lat() + "&lon="+latlng.lng()+"&cnt=10&appid="+ API_KEY , true );
 	xmlHttpRequest.responseType = 'json';
 	xmlHttpRequest.send( null );
 }
@@ -119,7 +155,7 @@ function setMap(map, city){
 	}
 
 	var mapOptions = {
-		zoom: 14, 
+		zoom: 13, 
 		center: latlng, 
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 		};

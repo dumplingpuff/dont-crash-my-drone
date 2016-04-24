@@ -22,20 +22,20 @@
   <tr>
     <td align="right"><b>Place：</b></td>
     <td>
-      <input type="radio" name="place" value="boston" id="boston" onchange="showInformation()">Boston
+      <input type="radio" checked="checked" name="place" value="boston" id="boston" onchange="showInformation()">Boston
       <input type="radio" name="place" value="tokyo" id="tokyo" onchange="showInformation()">Tokyo
     </td>
   </tr>
   <tr>
     <td></td>
     <td>
-      <input type="submit" value="SHOW THE WEATHER">
-      <input type="reset" value="SHOW THE WIND">
+      <input type="submit" value="SHOW THE WEATHER" onclick="showInformation()">
+      <input type="reset" value="SHOW THE WIND" onclick="onWind()">
     </td>
   </tr>
 </table>
 </form>
 
-      <div id="map" style="width: 1400px; height: 1000px;"></div>
+      <div id="map" style="width: 1000px; height: 700px;"></div>
     </body>
 </html>
